@@ -1,0 +1,72 @@
+/* Container to apply the perspective effect */
+.flip-card {
+  margin-top: -159px;
+  background-color: transparent;
+  width: 160px;
+  height: 160px;
+  perspective: 1000px; /* Create 3D space */
+  position: relative;
+  /* margin-left: -90px */
+}
+
+/* Inner wrapper that will be rotated and initially hidden */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d; /* Keep both sides in 3D */
+  transition: transform 1.2s ease-in-out, opacity 0.6s ease-in-out; /* Animation duration */
+  opacity: 0; /* Initially hidden */
+}
+
+/* Make the card visible on hover */
+.flip-card:hover .flip-card-inner {
+  opacity: 1; /* Show card */
+  transform: rotateY(180deg); /* Rotate twice (360° * 2) */
+}
+
+/* Front and back face of the card */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the backside when facing front */
+}
+
+/* Front face (image) */
+.flip-card-front {
+  background-color:rgba(47, 46, 46, 0.703);
+  border: 0px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back face (text) */
+.flip-card-back {
+  background-color: rgb(25, 25, 25);
+  opacity: 0.8;
+  color: white;
+  border: 3px solid blue;
+  border-radius: 20px;
+  transform: rotateY(180deg); /* Initially rotate back face by 180° */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p{
+  text-align: left;
+  padding-left: 14px;
+  /* padding-top: 3px; */
+}
+

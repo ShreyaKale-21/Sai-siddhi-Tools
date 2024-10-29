@@ -1,0 +1,19 @@
+.flip-container {
+    display: inline-block; /* Ensure it wraps around the text */
+    perspective: 1000px; /* Enable 3D space for the flip effect */
+  }
+  
+  .text {
+    display: inline-block; /* Required for proper flipping */
+    transition: transform 0.6s, opacity 0.6s; /* Smooth transition for flip */
+    transform: rotateY(0deg); /* Initial state */
+    /* opacity: 1; Fully visible */
+  }
+  
+  /* Flip effect when the 'flip' class is added */
+  .flip .text { /* Rotate the text */
+    /* Fade out */
+    transform: rotateY(360deg);
+  }
+  
+  
